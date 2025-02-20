@@ -1,0 +1,52 @@
+<div *ngIf="isLoading" class="loading"></div>
+<div class="posters">
+    <div class="posters-text">
+        <h1>Бесплатные фильмы смотреть онлайн</h1>
+        <div class="posters-text__description">В условиях, когда подписки на стриминговые сервисы становятся
+         всё более распространёнными, мы рады предложить вам возможность
+         смотреть кино онлайн бесплатно. В этой подборке вы найдете
+         разнообразные фильмы — от захватывающих драм до веселых комедий,
+         которые поднимут вам настроение. Все они доступны для просмотра,
+         так что вы можете легко найти что-то интересное в любое время.
+         Смотреть фильма онлайн бесплатно это не только приятно для вашего кошелька,
+         но и очень удобно. Вам не придётся разбираться в процессе покупки
+         того или иного фильма, а также торопиться с его просмотром,
+         ведь фильмы из этого каталога всегда можно поставить на паузу и досмотреть позже.
+        </div>
+    </div>
+        <img class="films-item__image" src="{{posters[index].previewUrl}}">      
+</div>
+<div class="films">
+    <select [(ngModel)]="selecetedGenre" (change)="filterMovies()">
+        <option value="">Все жанры</option>
+        <option *ngFor="let genre of genres" [value]="genre">
+            {{ genre }}
+        </option>
+    </select>
+    <div class="films__grid">
+        <div class="films-item" *ngFor="let movie of filteredMovies">
+            <div class="films-item__image">
+                <img [src]="movie.posterUrlPreview">
+            </div>
+            <div class="films-item__head">
+                <h3 class="films-item__name"> {{movie.nameRu}}</h3>
+                <div class="films-item__year"> {{ movie.year }}</div>
+            </div>
+            <div class="films-item__desc">
+                {{movie.description}}
+            </div>
+            <div class="films-item__genre">
+                {{ movie.genres[0].genre }}
+            </div>
+        </div>
+    </div>
+    <div class="pagination">
+        <button (click)="prevPage()" [disabled]="currentPage === 1" class="pagination__button">
+            Назад
+        </button>
+        <input [(ngModel)]="pageInput" type="number" (keyup.enter)="goToPage()" min="1" [max]="totalPages"> 
+        <button (click)="nextPage()" class="pagination__button">
+            Вперед
+        </button>
+    </div>
+</div>
