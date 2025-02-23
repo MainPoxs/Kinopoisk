@@ -63,10 +63,16 @@
 
 .films-item__head {
     display: flex;
+    flex-direction: column;
     justify-content: space-between;
     align-items: center;
 }
 
 .films-item__name {
     margin: 0;
+}
+.films-item__rating{
+    width: 30px;
+    text-align: center;
+    background-color: rgb(233, 77, 5);
 }
