@@ -57,7 +57,7 @@ export class TopComponent implements OnInit {
   getTopBackground(): void {
     this.http
       .get<any>(
-        'https://kinopoiskapiunofficial.tech/api/v2.2/films/3498/images?type=POSTER&page=1',
+        'https://kinopoiskapiunofficial.tech/api/v2.2/films/689/images?type=COVER&page=1',
         {
           headers: {
             'X-API-KEY': 'b364d279-060d-4ecb-b3a2-de6e94a042ee',
