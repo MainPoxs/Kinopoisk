@@ -1,12 +1,12 @@
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { RouterOutlet, RouterLink } from '@angular/router';
 import { FilmsComponent } from './films/films.component';
 import { TopComponent } from './top/top.component';
 import { HttpClientModule } from '@angular/common/http';
 
 @Component({
   selector: 'my-root',
-  imports: [RouterOutlet, FilmsComponent, TopComponent, HttpClientModule],
+  imports: [RouterOutlet, HttpClientModule, RouterLink],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
 })

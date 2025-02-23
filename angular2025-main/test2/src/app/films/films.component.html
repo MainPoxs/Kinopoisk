@@ -1,8 +1,30 @@
-<p>films works!</p>
-<div class="title">{{ 5 + 30 }} {{ 30 + 10 }}</div>
-<div class="auth">
-  @if (isLogin) { Вы авторизованы } @else { Авторизуйтесь }
+<div *ngIf="isLoading" class="loading"></div>
+<div class="posters">
+    <div >
+        <h1>Лучшие мультфильмы для детей</h1>        
+    </div>    
+        <img class="films-item__posters" src="{{posters[index].previewUrl}}">      
 </div>
-
-<div class="number">{{ number }}</div>
-<div class="number">{{ number | currency }}</div>
+<div class="films">    
+    <div class="films__grid">
+        <div class="films-item" *ngFor="let movie of movies">
+            <div class="films-item__image">
+                <img [src]="movie.posterUrlPreview">
+            </div>
+            <div class="films-item__head">
+                <h3 class="films-item__name"> {{movie.nameRu}}</h3>
+                <div class="films-item__year"> {{ movie.year }}</div>
+                <div class="films-item__rating"> {{ movie.ratingKinopoisk }}</div>
+            </div>      
+        </div>
+    </div>
+    <div class="pagination">
+        <button (click)="prevPage()" [disabled]="currentPage === 1" class="pagination__button">  
+            Назад      
+        </button>
+        <input [(ngModel)]="pageInput" type="number" (keyup.enter)="goToPage()" min="1" [max]="totalPages"> 
+        <button (click)="nextPage()" class="pagination__button">
+            Вперед
+        </button>
+    </div>
+</div>
