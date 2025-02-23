@@ -1,0 +1,26 @@
+.detail-film{
+    display: flex;
+    justify-content: space-around;
+    background-color: rgb(1, 1, 29);
+}
+.detail-film__head{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 800px;
+    height: 350px;
+   
+}
+.detail-film__name{
+    margin: 0;
+}
+.detail-film__rating{
+    width: 30px;
+    text-align: center;
+    background-color: rgb(233, 77, 5);
+}
+.detail-film__description{
+    width: 400px;
+    letter-spacing: 1px;
+    color: rgb(139, 139, 148);
+}

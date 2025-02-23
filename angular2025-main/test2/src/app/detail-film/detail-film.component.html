@@ -1,0 +1,19 @@
+<div class="detail-film">    
+    <div class="detail-film__image">
+       <img [src]="movie.posterUrlPreview">
+    </div>
+    <div class="detail-film__head">
+        <h1 class="detail-film__name"> {{movie.nameRu}}({{movie.year}})</h1>  
+        <div>
+            {{ movie.countries[0].country }}
+        </div>         
+        <div class="detail-film__rating">{{movie.ratingKinopoisk}}</div>  
+        <div class="films-item__genre">
+            {{ movie.genres[0].genre }}
+        </div>   
+        <h3>О фильме </h3>  
+        <div class="detail-film__description">{{ movie.description }}</div>
+    </div>
+</div>
+
+   
