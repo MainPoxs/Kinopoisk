@@ -1,0 +1,52 @@
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 100%;
+}
+.container-head{
+    display: flex;
+    justify-content:center;
+}
+.logo{
+    position: absolute;
+    display: flex;
+    align-items:center;
+    text-align: left;
+    left: 150px;
+    top: 10px;
+    width: 100px;
+    height: 50px;   
+    border-radius: 50%;
+    box-shadow: 12px 5px 0 0 yellow; 
+    font-size: large;       
+  }
+  .logo:hover{
+    box-shadow: 12px 10px 0 0  rgb(233, 77, 5); 
+
+  }
+  
+nav {
+    padding: 24px 0;
+    display: flex;
+    justify-content: center;
+    gap: 24px;
+}
+
+nav a {
+    font-size: 24px;
+    text-decoration: none;
+    color: #fff;
+    transition: .3s;
+}
+
+@media (any-hover:hover) {
+    nav a:hover {
+        color: rgb(139, 139, 148);
+    }
+}
+.container-footer{
+    padding: 24px 0;
+    display: flex;
+    justify-content: center;
+    color: rgb(139, 139, 148);
+}
