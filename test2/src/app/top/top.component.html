@@ -13,6 +13,7 @@
          того или иного фильма, а также торопиться с его просмотром,
          ведь фильмы из этого каталога всегда можно поставить на паузу и досмотреть позже.
         </div>
+       
     </div>
         <img class="films-item__image" src="{{posters[index].previewUrl}}">      
 </div>
@@ -25,10 +26,11 @@
     </select>
     <div class="films__grid">
         <div class="films-item" *ngFor="let movie of filteredMovies">
-            <a [routerLink]="['/film', movie.kinopoiskId]">Подробнее </a>
-            <div class="films-item__image">
-                <img [src]="movie.posterUrlPreview">
-            </div>
+            <a [routerLink]="['/film', movie.kinopoiskId]">
+                <div class="films-item__image">
+                    <img [src]="movie.posterUrlPreview">
+                </div>
+            </a>
             <div class="films-item__head">
                 <h3 class="films-item__name"> {{movie.nameRu}}</h3>
                 <div class="films-item__year"> {{ movie.year }}</div>

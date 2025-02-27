@@ -73,6 +73,7 @@ export class TopComponent implements OnInit {
         },
       });
   }
+
   getGenres(): void {
     const allGenres = new Set<string>();
     this.movies.forEach((movie) => {

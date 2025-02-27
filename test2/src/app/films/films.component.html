@@ -8,10 +8,11 @@
 <div class="films">    
     <div class="films__grid">
         <div class="films-item" *ngFor="let movie of movies">
-            <a [routerLink]="['/film', movie.kinopoiskId]">Подробнее </a>
-            <div class="films-item__image">
-                <img [src]="movie.posterUrlPreview">
-            </div>
+            <a [routerLink]="['/film', movie.kinopoiskId]">
+                <div class="films-item__image">
+                    <img [src]="movie.posterUrlPreview">
+                </div>
+            </a>
             <div class="films-item__head">
                 <h3 class="films-item__name"> {{movie.nameRu}}</h3>
                 <div class="films-item__year"> {{ movie.year }}</div>
